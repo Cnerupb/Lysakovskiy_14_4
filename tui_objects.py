@@ -12,26 +12,36 @@ class InpCoordForm(npyscreen.ActionForm):
         npyscreen (npyscreen): npyscreen module
     """
     def create(self):
-        self.add(npyscreen.Textfield, value="Input coords of First rect", editable=False)
+        self.add(npyscreen.Textfield, value="Input coords of First rect",
+                 editable=False, max_width=30)
         self.nextrelx += 5
-        self.x_1 = self.add(npyscreen.TitleText, name="x1:")
-        self.y_1 = self.add(npyscreen.TitleText, name="y1:")
-        self.x_2 = self.add(npyscreen.TitleText, name="x2:")
-        self.y_2 = self.add(npyscreen.TitleText, name="y2:")
+        self.x_1 = self.add(npyscreen.TitleText, name="x1:",
+                            begin_entry_at=10, max_width=30)
+        self.y_1 = self.add(npyscreen.TitleText, name="y1:",
+                            begin_entry_at=10, max_width=30)
+        self.x_2 = self.add(npyscreen.TitleText, name="x2:",
+                            begin_entry_at=10, max_width=30)
+        self.y_2 = self.add(npyscreen.TitleText, name="y2:",
+                            begin_entry_at=10, max_width=30)
         self.nextrelx -= 5
-        self.add(npyscreen.Textfield, value="Input coords of Second rect", editable=False)
+        self.add(npyscreen.Textfield, value="Input coords of Second rect",
+                 editable=False, max_width=30)
         self.nextrelx += 5
-        self.x_3 = self.add(npyscreen.TitleText, name="x3:")
-        self.y_3 = self.add(npyscreen.TitleText, name="y3:")
-        self.x_4 = self.add(npyscreen.TitleText, name="x4:")
-        self.y_4 = self.add(npyscreen.TitleText, name="y4:")
+        self.x_3 = self.add(npyscreen.TitleText, name="x3:",
+                            begin_entry_at=10, max_width=30)
+        self.y_3 = self.add(npyscreen.TitleText, name="y3:",
+                            begin_entry_at=10, max_width=30)
+        self.x_4 = self.add(npyscreen.TitleText, name="x4:",
+                            begin_entry_at=10, max_width=30)
+        self.y_4 = self.add(npyscreen.TitleText, name="y4:",
+                            begin_entry_at=10, max_width=30)
         self.nextrelx -= 5
-        self.add(npyscreen.Textfield, value="Now press OK to calculate", editable=False)
+        self.add(npyscreen.Textfield, value="Now press OK to calculate", editable=False, max_width=30)
         self.nextrelx += 5
         self.union = self.add(npyscreen.TitleText, name="Union:", value="0",
-                              hidden=True, editable=False)
+                              hidden=True, editable=False, max_width=30)
         self.intersection = self.add(npyscreen.TitleText, name="Intersection:", value="0",
-                                     hidden=True, editable=False)
+                                     hidden=True, editable=False, max_width=30)
 
     def get_coords_vals(self) -> list[str]:
         """Place rect obj coord attributes in list and return.
@@ -81,4 +91,4 @@ class App(npyscreen.NPSAppManaged):
         npyscreen (npyscreen): npyscreen module
     """
     def onStart(self):
-        self.addForm("MAIN", InpCoordForm, name="Union / Intersection App")
+        self.addForm("MAIN", InpCoordForm, name="Union / Intersection App", lines=20, columns=40)

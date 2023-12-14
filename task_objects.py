@@ -58,8 +58,8 @@ class Rect:
         """
         def get_len(c_1_1, c_1_2, c_2_1, c_2_2):
             return max(0, min(c_1_2, c_2_2) - max(c_1_1, c_2_1))
-        width = get_len(self.x_1, self.x_2, rect.x1, rect.x2)
-        height = get_len(self.y_1, self.y_2, rect.y1, rect.y2)
+        width = get_len(self.x_1, self.x_2, rect.x_1, rect.x_2)
+        height = get_len(self.y_1, self.y_2, rect.y_1, rect.y_2)
         return width * height
 
     def union(self, rect):
