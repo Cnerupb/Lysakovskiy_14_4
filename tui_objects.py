@@ -1,23 +1,30 @@
+"""Contain interface objects.
+"""
 import npyscreen
 from task_objects import Rect
 from functions import validate
 
 
 class InpCoordForm(npyscreen.ActionForm):
+    """Window, which appear in terminal, when we run "main.py"
+
+    Args:
+        npyscreen (npyscreen): npyscreen module
+    """
     def create(self):
         self.add(npyscreen.Textfield, value="Input coords of First rect", editable=False)
         self.nextrelx += 5
-        self.x1 = self.add(npyscreen.TitleText, name="x1:")
-        self.y1 = self.add(npyscreen.TitleText, name="y1:")
-        self.x2 = self.add(npyscreen.TitleText, name="x2:")
-        self.y2 = self.add(npyscreen.TitleText, name="y2:")
+        self.x_1 = self.add(npyscreen.TitleText, name="x1:")
+        self.y_1 = self.add(npyscreen.TitleText, name="y1:")
+        self.x_2 = self.add(npyscreen.TitleText, name="x2:")
+        self.y_2 = self.add(npyscreen.TitleText, name="y2:")
         self.nextrelx -= 5
         self.add(npyscreen.Textfield, value="Input coords of Second rect", editable=False)
         self.nextrelx += 5
-        self.x3 = self.add(npyscreen.TitleText, name="x3:")
-        self.y3 = self.add(npyscreen.TitleText, name="y3:")
-        self.x4 = self.add(npyscreen.TitleText, name="x4:")
-        self.y4 = self.add(npyscreen.TitleText, name="y4:")
+        self.x_3 = self.add(npyscreen.TitleText, name="x3:")
+        self.y_3 = self.add(npyscreen.TitleText, name="y3:")
+        self.x_4 = self.add(npyscreen.TitleText, name="x4:")
+        self.y_4 = self.add(npyscreen.TitleText, name="y4:")
         self.nextrelx -= 5
         self.add(npyscreen.Textfield, value="Now press OK to calculate", editable=False)
         self.nextrelx += 5
@@ -27,12 +34,19 @@ class InpCoordForm(npyscreen.ActionForm):
                                      hidden=True, editable=False)
 
     def get_coords_vals(self) -> list[str]:
-        return [self.x1.value, self.y1.value,
-                self.x2.value, self.y2.value,
-                self.x3.value, self.y3.value,
-                self.x4.value, self.y4.value]
+        """Place rect obj coord attributes in list and return.
+
+        Returns:
+            list[str]: list of coordinates.
+        """
+        return [self.x_1.value, self.y_1.value,
+                self.x_2.value, self.y_2.value,
+                self.x_3.value, self.y_3.value,
+                self.x_4.value, self.y_4.value]
 
     def on_ok(self):
+        """Launch when "ok" button pressed
+        """
         coords = self.get_coords_vals()
         if not validate(coords):
             npyscreen.notify_confirm("Invalid coords!", editw=1)
@@ -52,10 +66,19 @@ class InpCoordForm(npyscreen.ActionForm):
             self.intersection.update()
 
     def on_cancel(self):
-        is_exit = npyscreen.notify_ok_cancel("Are you sure?", "Confirm Box", editw=1)
+        """Launch when "cancel" button pressed
+        """
+        is_exit = npyscreen.notify_ok_cancel("Are you sure?",
+                                             "Confirm Box", editw=1)
         if is_exit:
             self.parentApp.setNextForm(None)
 
 class App(npyscreen.NPSAppManaged):
+    """Application object.
+    Contain Form we use to inp coords.
+
+    Args:
+        npyscreen (npyscreen): npyscreen module
+    """
     def onStart(self):
         self.addForm("MAIN", InpCoordForm, name="Union / Intersection App")
