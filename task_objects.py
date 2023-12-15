@@ -71,4 +71,4 @@ class Rect:
         Returns:
             int: area
         """
-        return (self.area + rect.area) - 2*self.intersection(rect)
+        return (self.area + rect.area) - self.intersection(rect)
