@@ -29,7 +29,7 @@ You will get 2 new fields at the botom of window, as result of calculation:
 ![Main Window with Union/Intersection labels](https://github.com/Cnerupb/Lysakovskiy_14_4/blob/main/readme_objs/Main%20Window%20with%20Answers.png)
 
 ## Details
-### How can we count intersecion and union of 2D objects?
+### How can we count intersecion and union of 2D rectangles?
 We use this functions:
 ```
 def intersection(self, rect) -> int:
