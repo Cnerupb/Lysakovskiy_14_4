@@ -63,9 +63,9 @@ It counts width and height of rectangle intersection by x and y coordinates.
 
 Explaination using formula:
 
-$$len = max(0, min(c_1_2, c_2_2) - max(c_1_1, c_2_1)),
+$len = max(0, min(c_1_2, c_2_2) - max(c_1_1, c_2_1))$,
 c_1_2, c_2_2 - coordinates of angles of second rectangle;
-c_1_1, c_2_1 - coordinates of angles of first rectangle;$$
+c_1_1, c_2_1 - coordinates of angles of first rectangle;
 
 
 Using Area formula:
