@@ -63,16 +63,16 @@ It counts width and height of rectangle intersection by x and y coordinates.
 
 Explaination using formula:
 
-$len = max(0, min(c_1_2, c_2_2) - max(c_1_1, c_2_1))$,
-c_1_2, c_2_2 - coordinates of angles of second rectangle;
-c_1_1, c_2_1 - coordinates of angles of first rectangle;
+$len = max(0, min(c_{1_2}, c_{2_2}) - max(c_{1_1}, c_{2_1}))$,\
+$c_{1_2}, c_{2_2}$ - coordinates of angles of second rectangle;\
+$c_{1_1}, c_{2_1}$ - coordinates of angles of first rectangle.
 
 
 Using Area formula:
 
 $S = width * height$
 
-We can easilly, firstly, count intersection and, secondly, count union of rectangles using this function and formula.
+We can easilly, firstly, count intersection and, secondly, count union of rectangles using this function and formulas.
 
 ## Special Thanks
 https://github.com/egorgur - for code documentation
