@@ -61,9 +61,9 @@ def union(self, rect):
 This 2D task can be simplified in 1D solution using ```get len``` function.
 It counts width and height of rectangle intersection by x and y coordinates.
 Using Area formula:
-```
-S = width * height
-```
+
+$S = width * height$
+
 We can easilly, firstly, count intersection and, secondly, count union of rectangles.
 
 ## Special Thanks
