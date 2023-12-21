@@ -2,6 +2,10 @@
 
 This repository is created to solve a problem in the practical work 4 of the subject "Introductory Practical Work".
 
+## What this programm can do
+- [x] Count Intersecion of 2 rectangles;
+- [x] count Union of 2 ractangles.
+
 ## Dependencies
 
 Make sure you have Python3 installed.
